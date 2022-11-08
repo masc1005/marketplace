@@ -1,0 +1,10 @@
+const { createServer } = require("net")
+
+const server = createServer(socket => {
+    socket.write("hello")
+    socket.on("data", data =>{
+        console.log(data.toString())
+    })
+})
+
+server.listen(1000)
